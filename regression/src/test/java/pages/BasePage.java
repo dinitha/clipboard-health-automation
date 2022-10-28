@@ -39,6 +39,18 @@ public class BasePage {
         return wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+    public void scrollToElement(WebElement element){
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+    protected void waitForElementToAppear(By locator) {
+        wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
 
+    protected void waitForElementToDisappear(By locator) {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
+    }
 
+    protected void waitForTextToDisappear(By locator, String text) {
+        wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
+    }
 }
