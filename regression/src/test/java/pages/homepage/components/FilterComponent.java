@@ -7,7 +7,7 @@ import pages.BasePage;
 
 public class FilterComponent extends BasePage {
 
-    By brandsLabel =By.xpath("//span[text()='Brands']");
+    private By brandsLabel =By.xpath("//span[text()='Brands']");
     public FilterComponent(WebDriver driver) {
         super(driver);
     }

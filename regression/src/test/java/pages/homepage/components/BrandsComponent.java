@@ -6,10 +6,8 @@ import org.openqa.selenium.WebElement;
 import pages.BasePage;
 
 public class BrandsComponent extends BasePage {
-
-    By brandsLabel =By.xpath("//span[text()='Brands']");
-
-    By samsungCheckbox = By.linkText("Samsung");
+    private By brandsLabel =By.xpath("//span[text()='Brands']");
+    private By samsungCheckbox = By.linkText("Samsung");
     public BrandsComponent(WebDriver driver) {
         super(driver);
     }

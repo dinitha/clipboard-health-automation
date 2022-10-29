@@ -5,9 +5,7 @@ import org.openqa.selenium.WebDriver;
 import pages.BasePage;
 
 public class TVAudioAndCameraComponent extends BasePage {
-
-
-    By televisionItem =By.linkText("Televisions");
+    private By televisionMenuItem =By.linkText("Televisions");
 
     public TVAudioAndCameraComponent(WebDriver driver) {
         super(driver);
@@ -15,7 +13,7 @@ public class TVAudioAndCameraComponent extends BasePage {
 
 
     public TVAudioAndCameraComponent clickTelevision(){
-        click(televisionItem);
+        click(televisionMenuItem);
         return this;
     }
 

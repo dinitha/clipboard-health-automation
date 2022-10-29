@@ -1,4 +1,4 @@
-package pages.enums;
+package enums;
 
 public enum SortBy {
 

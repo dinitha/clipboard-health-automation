@@ -1,13 +1,18 @@
 package tests;
 
 import com.framework.core.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.enums.SortBy;
+import constants.Constants;
+import enums.SortBy;
+import pages.HomePage;
 import pages.homepage.components.*;
 import utils.ExtentTestManager;
 
-public class InitialTest extends BaseTest {
+import java.util.logging.Logger;
 
+public class InitialTest extends BaseTest {
+    static Logger log = Logger.getLogger(InitialTest.class.getName());
     @Test
     public void amazonTest(){
         ExtentTestManager.startTest("Amazon Test","verify amazon feature");
@@ -25,8 +30,15 @@ public class InitialTest extends BaseTest {
                .clickSamsungCheckbox();
        new SortByComponent(getDriver())
                .SelectSortOption(String.valueOf(SortBy.HIGHTOLOW.getIndex()));
-
-
+        new SearchResultComponent(getDriver())
+                .clickSearchResultItem(2)
+                .switchToNewWindow();
+        new SelectedItemComponent(getDriver())
+                .scrollToAboutThisItem();
+        String Expected = new SelectedItemComponent(getDriver()).getAboutThisItemText();
+        Assert.assertEquals(Expected, Constants.ABOUT_THIS_ITEM);
+        String aboutThisItemDescription = new SelectedItemComponent(getDriver()).getAboutThisItemDescription();
+        log.info(aboutThisItemDescription);
 
 
 
