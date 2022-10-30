@@ -13,8 +13,8 @@ import java.util.logging.Logger;
 
 public class InitialTest extends BaseTest {
     static Logger log = Logger.getLogger(InitialTest.class.getName());
-    @Test
-    public void amazonTest(){
+    @Test(description = "The test to verify the second highest expensive television's properties")
+    public void verifyTelevisionTest(){
         ExtentTestManager.startTest("Amazon Test","verify amazon feature");
 
         new HomePage(getDriver())

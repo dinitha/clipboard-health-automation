@@ -44,6 +44,8 @@ public class BaseTest{
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver(firefoxOptions);
                 break;
+
+
         }
 
 
